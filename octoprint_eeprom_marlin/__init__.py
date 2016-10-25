@@ -36,6 +36,7 @@ class Eeprom_marlinPlugin(octoprint.plugin.AssetPlugin,
                 current=self._plugin_version,
 
                 # update method: pip
+                #update from robo directly
                 pip="https://github.com/Robo3D/OctoPrint-EEPROM-Marlin/archive/{target_version}.zip"
             )
         )
