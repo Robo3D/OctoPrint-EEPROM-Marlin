@@ -31,12 +31,12 @@ class Eeprom_marlinPlugin(octoprint.plugin.AssetPlugin,
 
                 # version check: github repository
                 type="github_release",
-                user="amsbr",
+                user="Robo3D",
                 repo="OctoPrint-EEPROM-Marlin",
                 current=self._plugin_version,
 
                 # update method: pip
-                pip="https://github.com/amsbr/OctoPrint-EEPROM-Marlin/archive/{target_version}.zip"
+                pip="https://github.com/Robo3D/OctoPrint-EEPROM-Marlin/archive/{target_version}.zip"
             )
         )
 
