@@ -14,14 +14,14 @@ plugin_package = "octoprint_eeprom_marlin"
 plugin_name = "OctoPrint-EEprom-Marlin"
 
 # The plugin's version. Can be overwritten within OctoPrint's internal data via __plugin_version__ in the plugin module
-plugin_version = "0.1.4.5"
+plugin_version = "0.1.5"
 
 # The plugin's description. Can be overwritten within OctoPrint's internal data via __plugin_description__ in the plugin
 # module
 plugin_description = """Makes it possible to change the EEprom values of Marlin Firmware through OctoPrint based on OctoPrint-EEprom-Repetir by Salandora"""
 
 # The plugin's author. Can be overwritten within OctoPrint's internal data via __plugin_author__ in the plugin module
-plugin_author = "Robo3D"
+plugin_author = "Anderson Silva"
 
 # The plugin's author's mail address.
 plugin_author_email = "ams.bra@gmail.com"
