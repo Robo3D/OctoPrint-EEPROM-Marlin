@@ -19,6 +19,7 @@ $(function() {
         self.eepromM206RegEx = /M206 ([X])(.*)[^0-9]([Y])(.*)[^0-9]([Z])(.*)/;
         self.eepromM301RegEx = /M301 ([P])(.*)[^0-9]([I])(.*)[^0-9]([D])(.*)/;
         self.eepromM851RegEx = /M851 ([Z])(.*)/;
+        self.eepromM851RegEx = /M907 ([A])(.*)[^0-100]([B])(.*)[^0-100]([C])(.*)[^0-100]([D])(.*)/;
 
         self.isMarlinFirmware = ko.observable(false);
 
@@ -285,6 +286,39 @@ $(function() {
                             origValue: match[2],
                             value: match[2],
                             description: 'Z-Probe Offset (mm)'
+                        });
+                    }
+
+                    // M201 Maximum Acceleration (mm/s2)
+                    match = self.eepromM907RegEx.exec(line);
+                    if (match) {
+                        self.eepromData.push({
+                            dataType: 'M907 A',
+                            position: 9,
+                            origValue: match[2],
+                            value: match[2],
+                            description: 'XY motor current (%)'
+                        });
+                        self.eepromData.push({
+                            dataType: 'M907 B',
+                            position: 10,
+                            origValue: match[4],
+                            value: match[4],
+                            description: 'XY current (%)'
+                        });
+                        self.eepromData.push({
+                            dataType: 'M907 C',
+                            position: 11,
+                            origValue: match[6],
+                            value: match[6],
+                            description: 'Extruder 1 motor current (%)'
+                        });
+                        self.eepromData.push({
+                            dataType: 'M907 D',
+                            position: 12,
+                            origValue: match[8],
+                            value: match[8],
+                            description: 'Extruder 2 motor current (%)'
                         });
                     }
                 });
